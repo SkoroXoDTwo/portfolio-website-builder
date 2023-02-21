@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './Header.scss';
 
@@ -7,11 +7,17 @@ type Props = {
 }
 
 const Header: FunctionComponent<Props> = ({ logoTitle }) => {
+  const [isOpenedMenu, setIsOpenedMenu] = useState<boolean>(false);
+
+  const handleToggleOpenedMenu = () => {
+    setIsOpenedMenu(!isOpenedMenu);
+  }
+
   return (
     <header className="header">
       <h1 className='header__logo'>{logoTitle}</h1>
 
-      <nav className='header__menu'>
+      <nav className={`header__menu ${isOpenedMenu ? 'header__menu_visible' : ''}`}>
         <ul className='header__menu-list'>
           <li>
             <NavLink
@@ -46,9 +52,11 @@ const Header: FunctionComponent<Props> = ({ logoTitle }) => {
         </ul>
       </nav>
 
-      <button className='header__exit-btn'>
+      <button className={`header__exit-btn ${isOpenedMenu ? 'header__exit-btn_visible' : ''}`}>
         Выйти
       </button>
+
+      <button className='header__burger-btn' onClick={handleToggleOpenedMenu}>|||</button>
     </header>
   );
 }
