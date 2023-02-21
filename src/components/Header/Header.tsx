@@ -17,17 +17,31 @@ const Header: FunctionComponent<Props> = ({ logoTitle }) => {
             <NavLink
               to="/"
               className={({ isActive }) =>
-              (`header__menu-link ${isActive ? "header__menu-link_active" : ''}`)
-            }
+                (`header__menu-link ${isActive ? "header__menu-link_active" : ''}`)
+              }
             >
               Проекты
             </NavLink>
           </li>
           <li>
-            <NavLink to="/about" className='header__menu-link'>Обо мне</NavLink>
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                (`header__menu-link ${isActive ? "header__menu-link_active" : ''}`)
+              }
+            >
+              Обо мне
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/technologies" className='header__menu-link'>Технологии</NavLink>
+            <NavLink
+              to="/technologies"
+              className={({ isActive }) =>
+                (`header__menu-link ${isActive ? "header__menu-link_active" : ''}`)
+              }
+            >
+              Технологии
+            </NavLink>
           </li>
         </ul>
       </nav>

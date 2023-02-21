@@ -5,6 +5,10 @@
   justify-content: space-between;
   align-items: center;
 
+  @media screen and (max-width: 1280px) {
+    padding: 40px 100px;
+  }
+
   &__logo {
     margin: 0;
     padding: 0;
@@ -33,6 +37,12 @@
     font-size: 20px;
     line-height: 24px;
     color: #ffffff;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 0.8;
+      cursor: pointer;
+    }
 
     &_active {
       border-bottom: 1px solid #fff;
@@ -48,8 +58,10 @@
     font-size: 20px;
     line-height: 24px;
     color: #ff4747;
+    transition: opacity 0.2s;
 
     &:hover {
+      opacity: 0.8;
       cursor: pointer;
     }
   }

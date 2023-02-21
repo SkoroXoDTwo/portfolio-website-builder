@@ -15,6 +15,5 @@ root.render(
     <HashRouter>
       <App />
     </HashRouter>
-
   </React.StrictMode>
 );
