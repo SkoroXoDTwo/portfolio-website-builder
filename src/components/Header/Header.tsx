@@ -8,6 +8,7 @@ type Props = {
 
 const Header: FunctionComponent<Props> = ({ logoTitle }) => {
   const [isOpenedMenu, setIsOpenedMenu] = useState<boolean>(false);
+  const [isActiveEditLogoMode, setIsActiveEditLogoMode] = useState<boolean>(false);
 
   const handleToggleOpenedMenu = () => {
     setIsOpenedMenu(!isOpenedMenu);
@@ -15,7 +16,21 @@ const Header: FunctionComponent<Props> = ({ logoTitle }) => {
 
   return (
     <header className="header">
-      <h1 className='header__logo'>{logoTitle}</h1>
+      {isActiveEditLogoMode
+        ?
+        <div className='header__logo-edit-container'>
+          <input className='header__input-logo' />
+          <button className='header__save-btn' onClick={() => setIsActiveEditLogoMode(false)} />
+        </div>
+
+        :
+        <div className='header__logo-container'>
+          <h1 className='header__logo'>{logoTitle}</h1>
+          <button className='header__edit-btn' onClick={() => setIsActiveEditLogoMode(true)} />
+        </div>
+      }
+
+
 
       <nav className={`header__menu ${isOpenedMenu ? 'header__menu_visible' : ''}`}>
         <ul className='header__menu-list'>
@@ -56,7 +71,10 @@ const Header: FunctionComponent<Props> = ({ logoTitle }) => {
         Выйти
       </button>
 
-      <button className='header__burger-btn' onClick={handleToggleOpenedMenu}>|||</button>
+      <button
+        className={`header__burger-btn ${isOpenedMenu ? 'header__burger-btn_close' : ''}`}
+        onClick={handleToggleOpenedMenu}
+      />
     </header>
   );
 }

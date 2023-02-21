@@ -23,6 +23,20 @@
     padding: 20px 16px;
   }
 
+  &__logo-container {
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+    height: 60px;
+  }
+
+  &__logo-edit-container {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    height: 60px;
+  }
+
   &__logo {
     margin: 0;
     padding: 0;
@@ -34,6 +48,60 @@
 
     @media screen and (max-width: 550px) {
       font-size: 36px;
+    }
+  }
+
+  &__input-logo {
+    width: 150px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  &__edit-btn {
+    margin: 0;
+    padding: 0;
+    border: none;
+    width: 20px;
+    height: 20px;
+    background: url(../../images/edit-btn-icon.svg);
+    background-size: cover;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 0.8;
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: 550px) {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &__save-btn {
+    margin: 0;
+    padding: 0;
+    border: none;
+    width: 20px;
+    height: 20px;
+    background: url(../../images/save-btn-icon.svg);
+    background-size: cover;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 0.8;
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: 550px) {
+      width: 16px;
+      height: 16px;
     }
   }
 
@@ -111,16 +179,59 @@
       display: block;
     }
   }
-
   &__burger-btn {
+    margin: 0;
+    padding: 0;
     border: none;
     background: none;
-    margin: 0;
-    color: #fff;
+    width: 20px;
+    border-top: 1px solid #fff;
+    height: 15px;
+    position: relative;
     display: none;
+    z-index: 3;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 0.8;
+      cursor: pointer;
+    }
 
     @media screen and (max-width: 1024px) {
-      display: block;
+      & {
+        display: block;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 0px;
+      width: 100%;
+      border-bottom: 1px solid #fff;
+      transition: transform 0.4s;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 13px;
+      left: 0px;
+      width: 100%;
+      border-bottom: 1px solid #fff;
+      transition: transform 0.4s;
+    }
+
+    &_close {
+      border-top: none;
+
+      &::after {
+        transform: translateX(0px) rotate(45deg);
+      }
+      &::before {
+        transform: translateY(-7px) rotate(-45deg);
+      }
     }
   }
 }
