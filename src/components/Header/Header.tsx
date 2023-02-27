@@ -67,9 +67,12 @@ const Header: FunctionComponent<Props> = ({ logoTitle }) => {
         </ul>
       </nav>
 
-      <button className={`header__exit-btn ${isOpenedMenu ? 'header__exit-btn_visible' : ''}`}>
-        Выйти
-      </button>
+      <div className='header__exit-btn-container'>
+        <button className={`header__exit-btn ${isOpenedMenu ? 'header__exit-btn_visible' : ''}`}>
+          Выйти
+        </button>
+      </div>
+
 
       <button
         className={`header__burger-btn ${isOpenedMenu ? 'header__burger-btn_close' : ''}`}

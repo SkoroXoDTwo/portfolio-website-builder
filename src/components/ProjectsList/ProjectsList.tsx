@@ -1,5 +1,5 @@
 import { FunctionComponent, PropsWithChildren } from 'react';
-import './Header.scss';
+import './ProjectsList.scss';
 
 const ProjectsList: FunctionComponent<PropsWithChildren> = () => {
 
