@@ -12,7 +12,9 @@ const HeaderAuth: FunctionComponent<Props> = () => {
 
       <button
         className={`header__btn-auth`}
-      />
+      >
+        Регистрация
+      </button>
     </header>
   );
 }
