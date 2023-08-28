@@ -30,8 +30,6 @@ const Header: FunctionComponent<Props> = ({ logoTitle }) => {
         </div>
       }
 
-
-
       <nav className={`header__menu ${isOpenedMenu ? 'header__menu_visible' : ''}`}>
         <ul className='header__menu-list'>
           <li>

@@ -6,6 +6,7 @@
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
+  background: #2A2A2A;
 
   @media screen and (max-width: 1280px) {
     padding: 20px 100px;
@@ -46,9 +47,13 @@
     line-height: 58px;
     color: #ffffff;
     text-transform: uppercase;
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     @media screen and (max-width: 550px) {
       font-size: 36px;
+      max-width: 160px;
     }
   }
 
@@ -145,6 +150,7 @@
     color: #ffffff;
     transition: opacity 0.2s;
     white-space: nowrap;
+    text-decoration: none;
 
     &:hover {
       opacity: 0.8;
