@@ -1,8 +1,8 @@
-import { FC,ReactNode } from "react";
-import { MemoryRouter, Route, Routes } from "react-router-dom";
+import { FC, ReactNode } from 'react';
+import { MemoryRouter, Route, Routes } from 'react-router-dom';
 
 interface RouterDecoratorProps {
-  children: ReactNode
+  children: ReactNode;
 }
 export const RouterDecorator: FC<RouterDecoratorProps> = ({ children }) => (
   <MemoryRouter>
@@ -11,5 +11,3 @@ export const RouterDecorator: FC<RouterDecoratorProps> = ({ children }) => (
     </Routes>
   </MemoryRouter>
 );
-
-export const withRouter = (storyFn: () => any) => <RouterDecorator>{storyFn()}</RouterDecorator>;

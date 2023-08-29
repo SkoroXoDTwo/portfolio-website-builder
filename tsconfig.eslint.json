@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "declarationDir": "lib",
+    "outDir": "lib",
+    "rootDir": "src"
+  },
+  "exclude": ["lib", "tests", "src/components/Profile/GoalsWithResultsOld/**/*.*"],
+  "include": ["e2e", "src/**/*", "*.js", "creevey.config.js"]
+}
